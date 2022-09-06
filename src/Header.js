@@ -1,10 +1,9 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { selectCars} from '../features/counter/car/carSlice';
+import { selectCars} from './carSlice';
 import { useSelector } from 'react-redux';
-import { selectedOptions } from '../features/options/optionSlice';
-import { mobile } from '../responsive'
+import { selectedOptions } from './optionSlice';
+import { mobile } from './responsive'
 
 const Header = ({ burgerStatus, setBurgerStatus }) => {
    const cars = useSelector(selectCars);
@@ -13,7 +12,7 @@ const Header = ({ burgerStatus, setBurgerStatus }) => {
   return (
     <Container>
       <a>
-         <img src='images/logo.svg' />
+         <img src='../public/images/logo.svg' />
       </a>
       <Menu>
          {cars && cars.map((car, index) => (

@@ -20,7 +20,7 @@ const Section = ({ title, description, leftTxtBtn, rightTxtBtn, backgroundImg })
             </RightButton>
             }
          </ButtonGroup>
-         <DownArrow src="./images/down-arrow.svg" />
+         <DownArrow src="../public/images/down-arrow.svg" />
       </Buttons>   
     </Wrap>
   );
