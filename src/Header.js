@@ -11,18 +11,18 @@ const Header = ({ burgerStatus, setBurgerStatus }) => {
    
   return (
     <Container>
-      <a>
-         <img src='../public/images/logo.svg' />
-      </a>
+      <div>
+         <img src='../public/images/LOG.svg' alt=''/>
+      </div>
       <Menu>
          {cars && cars.map((car, index) => (
-               <a key={index} href='#'>{car}</a>
+               <p key={index}>{car}</p>
          ))}
       </Menu>
       <RightMenu>
          <Wrap>
-            <a href='#'>Shop</a>
-            <a href='#'>Tesla Account</a>
+            <p>Shop</p>
+            <p>Tesla Account</p>
          </Wrap>
          <CustomMenu onClick={() => setBurgerStatus(!burgerStatus)}/>
       </RightMenu>
@@ -31,10 +31,9 @@ const Header = ({ burgerStatus, setBurgerStatus }) => {
             <CustomClose onClick={() => setBurgerStatus(!burgerStatus)}/>
          </CloseWrapper>
          {options && options.map((option, index) => (
-               <li><a key={index} href='#'>{option}</a></li>
+               <li><p key={index}>{option}</p></li>
          ))}
       </BurgerNav>
-      
     </Container>
   );
 }
@@ -63,7 +62,7 @@ const Menu = styled.div`
    flex: 1;
    justify-content: center;
 
-   a{
+   p{
       font-weight: 540;
       text-transform: capitalize;
       padding: 0 10px;
@@ -78,6 +77,10 @@ const Menu = styled.div`
    
 `
 const Wrap = styled.div`
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
    ${mobile({ display: 'none' })}
 `
 
@@ -86,7 +89,7 @@ const RightMenu = styled.div`
    align-items: center;
    
    
-   a{
+   p{
       font-weight: 540;
       text-transform: capitalize;
       margin-right: 10px;
@@ -127,7 +130,7 @@ const BurgerNav = styled.div`
          transform: translateY(3px);
       }
 
-      a{
+      p{
          font-weight: 600;
          display: block;
       }
@@ -150,7 +153,7 @@ const CustomClose = styled(FaTimes)`
 
 const CloseWrapper = styled.div`
    display: flex;
-   justify-content: flex-end;
+   justify-content: flex-start;
    align-items: center;
    margin-bottom: 0;
 `

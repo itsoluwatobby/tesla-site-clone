@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { IoIosArrowDown } from 'react-icons/io';
 
 
 const Section = ({ title, description, leftTxtBtn, rightTxtBtn, backgroundImg }) => {
@@ -20,7 +21,7 @@ const Section = ({ title, description, leftTxtBtn, rightTxtBtn, backgroundImg })
             </RightButton>
             }
          </ButtonGroup>
-         <DownArrow src="../public/images/down-arrow.svg" />
+         <DownArrow />
       </Buttons>   
     </Wrap>
   );
@@ -86,10 +87,11 @@ const RightButton = styled(LeftButton)`
    
 `
 
-const DownArrow = styled.img`
-   height: 40px;
+const DownArrow = styled(IoIosArrowDown)`
+   font-size: 36px;
    overflow-x: hidden;
-   margin-buttom: 10px;
+   margin-buttom: 5px;
+   color: #000000;
    animation-name: animateDown;
    animation-duration: 1.5s;
    animation-iteration-count: infinite;
